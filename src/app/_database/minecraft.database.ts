@@ -6,9 +6,9 @@ import {Injectable} from "@angular/core";
 @Injectable()
 export class MinecraftDatabase {
 
-  private itemsApiURL: string = "/api/items.json";
-  private itemsImageApiURL: string = "/api/items/";
-  private enchantmentsApiURL: string = "/api/enchantments.json";
+  private itemsApiURL: string = "/minecraft-configs/api/items.json";
+  private itemsImageApiURL: string = "/minecraft-configs/api/items/";
+  private enchantmentsApiURL: string = "/minecraft-configs/api/enchantments.json";
 
   public minecraftItems: MinecraftItem[];
   public minecraftEnchantments: MinecraftEnchantment[];
