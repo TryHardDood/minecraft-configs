@@ -1,0 +1,111 @@
+<div class="row">
+  <mz-card class="col-md-12">
+    <mz-card-title><strong>Essentials Kit creator</strong></mz-card-title>
+
+    <mz-card-content>
+      <div>
+        <form class="row" #kitForm="ngForm" (ngSubmit)="onSubmit()">
+          <mz-input-container class="col-lg-4 col-sm-12">
+            <i mz-icon-mdi mz-input-prefix [icon]="'format-title'"></i>
+            <input mz-input placeholder="Kit's name" [formControl]="kitNameFormControl" [validate]="true"
+                   id="kit-name-input" type="text" required/>
+          </mz-input-container>
+
+          <mz-input-container class="col-lg-4 col-sm-12">
+            <i mz-icon-mdi mz-input-prefix [icon]="'clock'"></i>
+            <input mz-input placeholder="Kit's delay" [formControl]="kitDelayFormControl"
+                   [validate]="true" id="kit-delay-input" type="number" required/>
+          </mz-input-container>
+
+          <button mz-button class="col-lg-2 col-sm-12" style="margin-top: 15px;">
+            <i mz-icon-mdi [icon]="'plus'" [align]="'left'"></i>
+            Add kit
+          </button>
+        </form>
+      </div>
+    </mz-card-content>
+  </mz-card>
+</div>
+
+<div class="row" *ngIf="generatedKits.length > 0">
+  <mz-card class="col-md-12">
+    <mz-card-title><strong>Generated Kits</strong></mz-card-title>
+
+    <mz-card-content>
+      <div class="row">
+        <mz-collapsible class="col-md-12">
+          <mz-collapsible-item *ngFor="let kit of generatedKits; let kitIndex = index">
+            <mz-collapsible-item-header>
+              <i mz-icon-mdi [icon]="'format-list-bulleted'"></i>&nbsp;{{kit.getName()}}
+              <button mz-button mz-tooltip [tooltip]="'Click here to delete ' + kit.getName()" [flat]="true"
+                      [float]="true" (click)="deleteKit(kit, kitIndex);"
+                      style="float: right;margin-top: 3px;">
+                <i mz-icon-mdi class="black-text" [icon]="'delete'" style="margin-left: 5px;margin-top: -2px;"></i>
+              </button>
+              <button mz-button mz-tooltip [tooltip]="'Click here to edit ' + kit.getName()" [flat]="true"
+                      [float]="true" (click)="editKit(kit);"
+                      style="float: right;margin-top: 3px;">
+                <i mz-icon-mdi class="black-text" [icon]="'pencil'" style="margin-left: 5px;margin-top: -2px;"></i>
+              </button>
+            </mz-collapsible-item-header>
+            <mz-collapsible-item-body>
+              <mz-collection *ngIf="kit.getItems()">
+                <mz-collection-item><i mz-icon-mdi [icon]="'clock'" [align]="'left'"></i>&nbsp;Delay: {{kit.getDelay()}}
+                </mz-collection-item>
+                <a mz-collection-link (click)="openItemDialog(kit)" class="waves-effect">
+                  <i mz-icon-mdi [icon]="'plus'" [align]="'left'"></i>&nbsp;Add item
+                </a>
+
+                <ng-container *ngFor="let item of kit.getItems(); let itemIndex = index">
+
+                  <mz-collection-item [avatar]="true">
+                    <img mz-avatar
+                         src="api/items/{{item.getType()}}-{{item.getMeta()}}.png"
+                         alt=""/>
+                    <div class="title">{{item.getName()}}</div>
+                    <div><i>Amount:</i> <strong>{{item.getAmount()}}</strong></div>
+
+                    <div *ngIf="item.getCustomName().length > 0"><i>Custom name:</i>
+                      <strong>{{item.getCustomName()}}</strong></div>
+                    <div *ngIf="item.getEnchantments().length > 0"><i>Enchantments:</i> <strong
+                      *ngFor="let enchantment of item.getEnchantments()">{{enchantment.getTextType()}}:{{enchantment.getLevel()}} </strong>
+                    </div>
+                    <div *ngIf="item.getLores().length > 0"><i>Lore:</i> <strong
+                      *ngFor="let lore of item.getLores(); let loreIndex = index">{{lore}}<span
+                      *ngIf="loreIndex !== item.getLores().length-1">|</span></strong></div>
+                    <a mz-secondary-content (click)="deleteItemFromKit(kit, itemIndex)">
+                      <button mz-button [flat]="true" [float]="true">
+                        <i mz-icon-mdi class="black-text" [icon]="'delete'"></i>
+                      </button>
+                    </a>
+                  </mz-collection-item>
+                </ng-container>
+              </mz-collection>
+            </mz-collapsible-item-body>
+          </mz-collapsible-item>
+        </mz-collapsible>
+      </div>
+    </mz-card-content>
+  </mz-card>
+
+  <mz-card class="col-md-12">
+    <mz-card-title>
+      <strong>Generated Config</strong>
+      <button mz-button mz-tooltip [tooltip]="'Click here to copy the generated config'" [flat]="true" [float]="true"
+              (click)="copyToClipboard(generatedConfig);"
+              style="float: right;">
+        <i mz-icon-mdi class="black-text" [icon]="'content-copy'" style="margin-left: 1px;margin-top: 3px;"></i>
+      </button>
+      <button mz-button mz-tooltip [tooltip]="'Click here to generate the config file'" [flat]="true" [float]="true"
+              (click)="generateKitConfig();"
+              style="float: right;">
+        <i mz-icon-mdi class="black-text" [icon]="'settings'" style="margin-left: 1px;margin-top: 3px;"></i>
+      </button>
+    </mz-card-title>
+    <mz-card-content>
+      <div class="col-md-12 col-sm-12" style="margin-top: 15px;">
+        <pre><code style="overflow-x: scroll;">{{generatedConfig}}</code></pre>
+      </div>
+    </mz-card-content>
+  </mz-card>
+</div>

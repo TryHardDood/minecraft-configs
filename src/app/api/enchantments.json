@@ -1,0 +1,176 @@
+[
+  {
+    "type": 1,
+    "level": 0,
+    "name": "Fire Protection",
+    "text_type": "fire_protection"
+  },
+  {
+    "type": 2,
+    "level": 0,
+    "name": "Feather Falling",
+    "text_type": "feather_falling"
+  },
+  {
+    "type": 3,
+    "level": 0,
+    "name": "Blast Protection",
+    "text_type": "blast_protection"
+  },
+  {
+    "type": 4,
+    "level": 0,
+    "name": "Projectile Protection",
+    "text_type": "projectile_protection"
+  },
+  {
+    "type": 5,
+    "level": 0,
+    "name": "Respiration",
+    "text_type": "respiration"
+  },
+  {
+    "type": 6,
+    "level": 0,
+    "name": "Aqua Affinity",
+    "text_type": "aqua_affinity"
+  },
+  {
+    "type": 7,
+    "level": 0,
+    "name": "Thorns",
+    "text_type": "thorns"
+  },
+  {
+    "type": 8,
+    "level": 0,
+    "name": "Depth Strider",
+    "text_type": "depth_strider"
+  },
+  {
+    "type": 9,
+    "level": 0,
+    "name": "Frost Walker",
+    "text_type": "frost_walker"
+  },
+  {
+    "type": 10,
+    "level": 0,
+    "name": "Curse of Binding",
+    "text_type": "binding_curse"
+  },
+  {
+    "type": 16,
+    "level": 0,
+    "name": "Sharpness",
+    "text_type": "sharpness"
+  },
+  {
+    "type": 17,
+    "level": 0,
+    "name": "Smite",
+    "text_type": "smite"
+  },
+  {
+    "type": 18,
+    "level": 0,
+    "name": "Bane of Arthropods",
+    "text_type": "bane_of_arthropods"
+  },
+  {
+    "type": 19,
+    "level": 0,
+    "name": "Knockback",
+    "text_type": "knockback"
+  },
+  {
+    "type": 20,
+    "level": 0,
+    "name": "Fire Aspect",
+    "text_type": "fire_aspect"
+  },
+  {
+    "type": 21,
+    "level": 0,
+    "name": "Looting",
+    "text_type": "looting"
+  },
+  {
+    "type": 22,
+    "level": 0,
+    "name": "Sweeping Edge",
+    "text_type": "sweeping"
+  },
+  {
+    "type": 32,
+    "level": 0,
+    "name": "Efficiency",
+    "text_type": "efficiency"
+  },
+  {
+    "type": 33,
+    "level": 0,
+    "name": "Silk Touch",
+    "text_type": "silk_touch"
+  },
+  {
+    "type": 34,
+    "level": 0,
+    "name": "Unbreaking",
+    "text_type": "unbreaking"
+  },
+  {
+    "type": 35,
+    "level": 0,
+    "name": "Fortune",
+    "text_type": "fortune"
+  },
+  {
+    "type": 48,
+    "level": 0,
+    "name": "Power",
+    "text_type": "power"
+  },
+  {
+    "type": 49,
+    "level": 0,
+    "name": "Punch",
+    "text_type": "punch"
+  },
+  {
+    "type": 50,
+    "level": 0,
+    "name": "Flame",
+    "text_type": "flame"
+  },
+  {
+    "type": 51,
+    "level": 0,
+    "name": "Infinity",
+    "text_type": "infinity"
+  },
+  {
+    "type": 61,
+    "level": 0,
+    "name": "Luck of the Sea",
+    "text_type": "luck_of_the_sea"
+  },
+  {
+    "type": 62,
+    "level": 0,
+    "name": "Lure",
+    "text_type": "lure"
+  },
+  {
+    "type": 70,
+    "level": 0,
+    "name": "Mending",
+    "text_type": "mending"
+  },
+  {
+    "type": 71,
+    "level": 0,
+    "name": "Curse of Vanishing",
+    "text_type": "vanishing_curse"
+  }
+]

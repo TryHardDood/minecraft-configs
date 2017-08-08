@@ -1,0 +1,30 @@
+<mz-modal #editKitModal>
+  <mz-modal-header>
+    Edit kit
+  </mz-modal-header>
+  <mz-modal-content>
+    <form (ngSubmit)="onSubmit()" class="row">
+      <div class="col-md-12 col-sm-12">
+        <div class="row">
+          <div class="col-lg-1 hidden-sm-down"></div>
+          <mz-input-container class="col-lg-5 col-sm-12">
+            <i mz-icon-mdi mz-input-prefix [icon]="'format-title'"></i>
+            <input mz-input placeholder="Kit's name" [formControl]="kitNameFormControl" [validate]="true"
+                   id="kit-name-input" type="text" required/>
+          </mz-input-container>
+
+          <mz-input-container class="col-lg-5 col-sm-12">
+            <i mz-icon-mdi mz-input-prefix [icon]="'clock'"></i>
+            <input mz-input placeholder="Kit's delay" [formControl]="kitDelayFormControl"
+                   [validate]="true" id="kit-delay-input" type="number" required/>
+          </mz-input-container>
+          <div class="col-lg-1 hidden-sm-down"></div>
+        </div>
+      </div>
+    </form>
+  </mz-modal-content>
+  <mz-modal-footer>
+    <button mz-button [flat]="true" (click)="onSubmit();">Submit</button> <!---mz-modal-close-->
+    <button mz-button [flat]="true" mz-modal-close>Cancel</button> <!---mz-modal-close-->
+  </mz-modal-footer>
+</mz-modal>

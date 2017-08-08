@@ -1,0 +1,27 @@
+<div class="row">
+  <mz-card class="col-md-12">
+    <mz-card-title>
+     GroupManager group creator
+    </mz-card-title>
+    <mz-card-content>
+      <strong>WIP! NOT WORKING.</strong>
+      <div>
+        <form class="row" #groupForm="ngForm">
+          <mz-input-container class="col-lg-4 col-sm-12">
+            <i mz-icon-mdi mz-input-prefix [icon]="'format-color-text'"></i>
+            <input mz-input #kitDelayInput placeholder="Group's name" [validate]="true" id="group-name-input" type="text" required/>
+          </mz-input-container>
+
+          <mz-checkbox-container class="col-lg-4 col-sm-12">
+            <input mz-checkbox [label]="'Build'" id="build-checkbox" type="checkbox">
+          </mz-checkbox-container>
+
+          <button mz-button class="col-md-1 col-sm-12">
+            <i mz-icon-mdi [icon]="'plus'" [align]="'left'"></i>
+            Add Group
+          </button>
+        </form>
+      </div>
+    </mz-card-content>
+  </mz-card>
+</div>

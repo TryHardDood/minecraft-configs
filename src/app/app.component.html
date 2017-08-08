@@ -1,0 +1,38 @@
+<header>
+  <mz-sidenav #sidenav [id]="'sidenav'" [backgroundClass]="'navbar-background'" [collapseButtonId]="'btn-sidenav'"
+              [fixed]="true">
+
+    <mz-sidenav-header class="sidenav-header">
+      <h5 class="materialize-name center-align white-text">Minecraft-Configs</h5>
+    </mz-sidenav-header>
+
+    <mz-sidenav-subheader>
+      <span class="grey-text lighten-4">Navigation</span>
+    </mz-sidenav-subheader>
+
+    <mz-sidenav-link *ngFor="let item of itemsMenu">
+      <a routerLink="{{item.getURL()}}" class="waves-effect white-text">{{item.getTitle()}}</a>
+    </mz-sidenav-link>
+
+    <mz-sidenav-subheader>
+      <span class="grey-text lighten-4">Tools</span>
+    </mz-sidenav-subheader>
+
+    <mz-sidenav-link *ngFor="let tool of toolsMenu">
+      <a routerLink="{{tool.getURL()}}" class="waves-effect white-text">{{tool.getTitle()}}</a>
+    </mz-sidenav-link>
+  </mz-sidenav>
+
+  <button mz-button class="navbar-background hide-on-large-only" style="float: right; margin-right: 10px;" id="btn-sidenav" [float]="true" [large]="true">
+    <i mz-icon-mdi [icon]="'menu'"></i>
+  </button>
+</header>
+
+<main>
+  <div class="container">
+    <router-outlet></router-outlet>
+  </div>
+</main>
+
+<footer>
+</footer>
