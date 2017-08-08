@@ -42,7 +42,7 @@ main {
   background: #333333 !important;
 }
 
-button:not([ng-reflect-flat]) {
+button:not([ng-reflect-flat]):not(.btn-flat) {
   background: #333333 !important;
   color: white;
 }
